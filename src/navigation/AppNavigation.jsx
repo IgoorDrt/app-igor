@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "../screens/HomeScreen";
 import SobreScreen from "../screens/SobreScreen";
 import ProdutosScreen from "../screens/ProdutoSreen";
+import TempoScreen from "../screens/TempoScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -44,6 +45,14 @@ function TabNavigator() {
         options={{
           title: "Sobre",
           tabBarIcon: "information",
+        }}
+      />
+      <Tab.Screen
+        name="TempoScreen"
+        component={TempoScreen}
+        options={{
+          title: "Tempo",
+          tabBarIcon: "weather-sunny",
         }}
       />
     </Tab.Navigator>

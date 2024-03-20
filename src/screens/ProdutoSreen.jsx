@@ -60,12 +60,20 @@ export default function ProdutosScreen() {
       <Text variant="titleLarge">Produtos</Text>
       <Text variant="bodyMedium">Confira a lista de produtos</Text>
       <ScrollView>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-around",
+            flexWrap: "wrap",
+          }}
+          >
         {categorias.map((cat) => (
-          <Button key={cat} onPress={() => setCategoria(cat)}>
+          <Button key={cat} onPress={() => setCategoria(cat)} mode="contained">
             {cat}
           </Button>
         ))}
-
+        <Button onPress={() => setCategoria("")}>Limpar Filtros</Button>
+    </View>
         {
           
           produtos.length === 0 ? (
