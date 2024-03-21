@@ -4,8 +4,8 @@ import styles from "../config/styles";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const API_KEY = "2c0fa5d5c18849176a5883d8631c337a"; //peguem a de vocês
-const CITY_NAME = "Joinville"; //peguem a de vocês
+const API_KEY = "547210dcda1c34b8926ea3960324bcb7"; //peguem a de vocês
+const CITY_NAME = "Yakutsk"; //peguem a de vocês
 
 export default function TempoScreen() {
   const [tempoData, setTempoData] = useState(null);
@@ -44,7 +44,7 @@ export default function TempoScreen() {
             <Text>Umidade: {tempoData.main.humidity}%</Text>
             <Text>Visibilidade: {tempoData.visibility / 1000} km</Text>
             <Text>Vento: {tempoData.wind.speed} m/s</Text>
-            <Text>Descrição: {tempoData.weather[0].description}</Text>
+            <Text>Descrição: {tempoData.weather[0].description}</Text> 
           </Card.Content>
         </Card>
       )}
