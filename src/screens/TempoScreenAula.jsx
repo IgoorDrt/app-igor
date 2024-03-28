@@ -13,8 +13,9 @@ import styles from "../config/styles";
  * - LEMBREI É O U... COM [] VAZIO
  * -
  */
+const Cidade = "Berlin";
 const API = "547210dcda1c34b8926ea3960324bcb7";
-const URL = `https://api.openweathermap.org/data/2.5/weather?q=Joinville&appid=${API}&units=metric`;
+const URL = `https://api.openweathermap.org/data/2.5/weather?q=${Cidade}&appid=${API}&units=metric`;
 
 export default function TempoScreenAula() {
   const [temperatura, setTemperatura] = useState("");
@@ -45,7 +46,7 @@ export default function TempoScreenAula() {
             variant="displayMedium"
             style={{ textAlign: "center", marginVertical: 10 }}
           >
-            Temperatura em Barcelona
+            Temperatura em {Cidade}
           </Text>
           <Image
             source={{
