@@ -14,15 +14,13 @@ import styles from "../config/styles";
  * -
  */
 const API = "547210dcda1c34b8926ea3960324bcb7";
+const URL = `https://api.openweathermap.org/data/2.5/weather?q=Joinville&appid=${API}&units=metric`;
 
 export default function TempoScreenAula() {
   const [temperatura, setTemperatura] = useState("");
   const [icone, setIcone] = useState("");
-  const [cidade, setCidade] = useState("Joinville");
 
   const fetchTempo = async () => {
-
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${API}&units=metric`;
     // vou lá buscar o JSON na internet
     const resposta = await fetch(URL);
     // recebo essa informação e converto ela em programação que é JSON
@@ -47,7 +45,7 @@ export default function TempoScreenAula() {
             variant="displayMedium"
             style={{ textAlign: "center", marginVertical: 10 }}
           >
-            Temperatura em Joinville
+            Temperatura em Barcelona
           </Text>
           <Image
             source={{

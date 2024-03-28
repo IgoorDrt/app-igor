@@ -2,8 +2,10 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "../screens/HomeScreen";
 import SobreScreen from "../screens/SobreScreen";
-import ProdutosScreen from "../screens/ProdutoSreen";
+import ProdutoScreen from "../screens/ProdutoScreen";
 import TempoScreen from "../screens/TempoScreen";
+
+import TempoScreenAula from "../screens/TempoScreenAula";
 import { NavigationContainer } from "@react-navigation/native";
 
 const Stack = createNativeStackNavigator();
@@ -12,13 +14,13 @@ const Tab = createMaterialBottomTabNavigator();
 export default function AppNavigator() {
   return (
     <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen
-        name="TabNavigator" // funciona como uma ID da tela, vamos usa-la para chamar esta tela depois
-        component={TabNavigator}
-        options={{ headerShown: false }}
-      />
-    </Stack.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="TabNavigator" // funciona como uma ID da tela, vamos usa-la para chamar esta tela depois
+          component={TabNavigator}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
@@ -35,8 +37,8 @@ function TabNavigator() {
         }}
       />
       <Tab.Screen
-        name="ProdutosScreen"
-        component={ProdutosScreen}
+        name="ProdutoScreen"
+        component={ProdutoScreen}
         options={{
           title: "Produtos",
           tabBarIcon: "cart",
@@ -53,6 +55,14 @@ function TabNavigator() {
       <Tab.Screen
         name="TempoScreen"
         component={TempoScreen}
+        options={{
+          title: "Tempo",
+          tabBarIcon: "weather-sunny",
+        }}
+      />
+      <Tab.Screen
+        name="TempoScreenAula"
+        component={TempoScreenAula}
         options={{
           title: "Tempo",
           tabBarIcon: "weather-sunny",
